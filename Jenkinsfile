@@ -1,13 +1,15 @@
 pipeline{
     agent any
     stages{
-        agent{
+        stage('Build')
+        {
+            agent{
             docker{
                 image 'node:latest'
                 reuseNode true
             }
         }
-        stage("Build")
+        steps
         {
             sh '''
             
@@ -19,6 +21,7 @@ pipeline{
                 echo 'List Data'
                 ls -la
             '''
+        }
         }
     }
 }
