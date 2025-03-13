@@ -11,10 +11,10 @@ pipeline {
             steps {
                 sh '''
                     ls -la
-                    node -v
-                    npm -v
+                    node --version
+                    npm --version
+                    npm ci
                     npm run build
-                    echo "List Data"
                     ls -la
                 '''
             }
