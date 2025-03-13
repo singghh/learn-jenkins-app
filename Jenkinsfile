@@ -25,6 +25,12 @@ pipeline {
         }
         stage('Test')
         {
+            agent{
+                docker{
+                    image 'node:latest'
+                    resuseNode true
+                }
+            }
             steps{
                 sh 'test -f build/index.html'
             }
