@@ -28,7 +28,7 @@ pipeline {
             agent{
                 docker{
                     image 'node:latest'
-                    resuseNode true
+                    reuseNode true
                 }
             }
             steps{
