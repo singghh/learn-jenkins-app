@@ -1,11 +1,13 @@
 pipeline{
     agent any
+    options{
+        reuseNode true
+    }
     stages{
         stage('Build'){
             agent{
                 docker{
                     image 'node:latest'
-                    reuseNode true
                 }
             }
             steps{
