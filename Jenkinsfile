@@ -3,19 +3,22 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent {
-                docker {
+            agent{
+                docker{
                     image 'node:latest'
                 }
             }
-            steps {
-                sh '''
+            steps{
+                sh'''
+
                     ls -la
-                    node --version
-                    npm --version
+                    node -v
+                    npm -v
                     npm ci
                     npm run build
+                    echo "----List----"
                     ls -la
+
                 '''
             }
         }
