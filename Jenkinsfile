@@ -1,16 +1,14 @@
-pipeline{
+pipeline {
     agent any
-    options{
-        reuseNode true
-    }
-    stages{
-        stage('Build'){
-            agent{
-                docker{
+
+    stages {
+        stage('Build') {
+            agent {
+                docker {
                     image 'node:latest'
                 }
             }
-            steps{
+            steps {
                 sh '''
                     ls -la
                     node -v
