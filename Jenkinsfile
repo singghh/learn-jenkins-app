@@ -6,6 +6,7 @@ pipeline {
             agent{
                 docker{
                     image 'node:latest'
+                    reuseNode true
                 }
             }
             steps{
