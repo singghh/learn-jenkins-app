@@ -1,27 +1,23 @@
 pipeline{
     agent any
     stages{
-        stage('Build')
-        {
+        stage('Build'){
             agent{
-            docker{
-                image 'node:latest'
-                reuseNode true
+                docker{
+                    image 'node:latest'
+                    reuseNode true
+                }
             }
-        }
-        steps
-        {
-            sh '''
-            
-                ls -la
-                node -v
-                npm -v
-                npm ci
-                npm run build
-                echo 'List Data'
-                ls -la
-            '''
-        }
+            steps{
+                sh '''
+                    ls -la
+                    node -v
+                    npm -v
+                    npm run build
+                    echo "List Data"
+                    ls -la
+                '''
+            }
         }
     }
 }
