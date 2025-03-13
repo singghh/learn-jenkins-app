@@ -11,7 +11,6 @@ pipeline {
             }
             steps{
                 sh'''
-
                     ls -la
                     node -v
                     npm -v
